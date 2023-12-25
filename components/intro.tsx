@@ -1,16 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/hooks/use-active-section-context";
 
 export default function Intro() {
+	const { ref, inView } = useInView({
+		threshold: 0.75,
+	});
+	const { setActiveSection, timeOfLastClicked } = useActiveSectionContext();
+
+	useEffect(() => {
+		if (inView && Date.now() - timeOfLastClicked > 1000) {
+			setActiveSection("Home");
+		}
+	}, [inView, setActiveSection, timeOfLastClicked]);
 	return (
-		<section className=" mb-28 max-w-[50rem] text-center sm:mb-0">
+		<section
+			ref={ref}
+			className=" mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+			id="home">
 			<div className="flex items-center justify-center">
 				<div className="relative">
 					<motion.div
@@ -43,7 +58,7 @@ export default function Intro() {
 				</div>
 			</div>
 
-			<motion.p
+			<motion.h1
 				className="mb-10 mt-10 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
 				initial={{ opacity: 0, y: 100 }}
 				animate={{ opacity: 1, y: 0 }}>
@@ -51,7 +66,7 @@ export default function Intro() {
 				<span className="font-bold">full-stack developer</span>. I enjoy
 				building <span className="italic">Websites & apps</span>. My focus is{" "}
 				<span className="underline">React (Next.js)</span>.
-			</motion.p>
+			</motion.h1>
 
 			<motion.div
 				className="flex flex-col items-center justify-center gap-3 font-medium px-4 text-lg sm:flex-row"
@@ -62,25 +77,28 @@ export default function Intro() {
 				}}>
 				<Link
 					href="#contact"
-					className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full">
-					Contact me here <BsArrowRight />
+					className="bg-gray-900 group text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition">
+					Contact me here{" "}
+					<BsArrowRight className=" opacity-70 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
 				</Link>
 
 				<a
-					className="bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full"
-					href="">
-					Download CV <HiDownload />{" "}
+					className="bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition group cursor-pointer border border-black/10"
+					href="/CV.pdf"
+					download>
+					Download CV{" "}
+					<HiDownload className="opacity-60 group-hover:translate-y-1 transition-all" />{" "}
 				</a>
 
 				<a
-					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full"
+					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer border border-black/10  hover:text-gray-950"
 					rel="noopener noreferrer"
 					target="_blank"
 					href="https://www.linkedin.com/in/suman-mondal-a364b2196/">
 					<BsLinkedin />
 				</a>
 				<a
-					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full"
+					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer border border-black/10 hover:text-gray-950"
 					rel="noopener noreferrer"
 					target="_blank"
 					href="https://github.com/suman-rocky/">
