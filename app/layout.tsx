@@ -7,6 +7,8 @@ import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer";
 import ToggleTheme from "@/components/toggleTheme";
 import ThemeContextProvider from "@/context/themeContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +35,8 @@ export default function RootLayout({
 					<ActiveSectionContextProvider>
 						<Headers />
 						{children}
+						<SpeedInsights />
+						<Analytics />
 						<Toaster position="top-center" />
 						<Footer />
 						<ToggleTheme />
