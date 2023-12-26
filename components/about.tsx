@@ -22,9 +22,9 @@ export default function About() {
 				to pursue my passion for programming. I enrolled in a couse and learned{" "}
 				<span className="font-medium">full-stack web development</span>.{" "}
 				<span className="italic">My favorite part of programming</span> is the
-				problem-solving aspect. I <span className="underline">love</span> the
-				feeling of finally figuring out a solution to a problem. My core stack
-				is{" "}
+				problem-solving aspect. I <span className="hoverAnimation font-bold dark:text-white">love</span>{" "}
+				the feeling of finally figuring out a solution to a problem. My core
+				stack is{" "}
 				<span className="font-medium">
 					MERN (MongoDB, Express, React, Node.js)
 				</span>

@@ -37,7 +37,7 @@ export default function Skills() {
 							once: true,
 						}}
 						key={index}
-						className=" bg-white borderBlack rounded-xl px-5 py-3">
+						className=" bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80">
 						<p className="text-lg font-semibold">{skill}</p>
 					</motion.li>
 				))}

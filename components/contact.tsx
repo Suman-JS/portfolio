@@ -33,10 +33,10 @@ export default function Contact() {
 			}}>
 			<SectionHeading>Contact me</SectionHeading>
 
-			<p className=" text-gray-900 dark:text-gray-300 text-center">
+			<p className=" text-gray-900 dark:text-white/80 text-center">
 				Please contact me directly at{" "}
 				<a
-					className="underline text-gray-900 dark:text-gray-300"
+					className="hoverAnimation text-gray-900 dark:text-gray-300"
 					href="mailto:sm7135120@gmail.com">
 					sm7135120@gmail.com
 				</a>{" "}
@@ -45,7 +45,7 @@ export default function Contact() {
 
 			<form
 				ref={formRef}
-				className="flex flex-col mt-10"
+				className="flex flex-col mt-10 dark:text-black"
 				action={async (FormData) => {
 					const { data, error } = await sendEmail(FormData);
 					if (error) {
@@ -123,14 +123,14 @@ export default function Contact() {
 					type="email"
 					name="senderEmail"
 					placeholder="Enter your email address here"
-					className=" h-14 rounded-lg borderBlack p-4 font-medium dark:text-gray-950"
+					className=" h-14 rounded-lg borderBlack p-4 font-medium dark:text-black dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:outline-none transition-all"
 					required
 					maxLength={100}
 				/>
 				<textarea
 					placeholder="Your message here"
 					name="message"
-					className="h-52 my-3 rounded-lg borderBlack p-4 font-normal dark:text-gray-950 leading-5 resize-none"
+					className="h-52 my-3 rounded-lg borderBlack p-4 font-normal dark:text-black dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all leading-5 resize-none dark:outline-none"
 					required
 					maxLength={5000}
 					minLength={4}

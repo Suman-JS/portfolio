@@ -9,6 +9,7 @@ import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import useSectionInView from "@/hooks/use-section-inview";
 import { useActiveSectionContext } from "@/hooks/use-active-section-context";
+import "@/app/hover.css";
 
 export default function Intro() {
 	const { ref } = useSectionInView("Home", 0.5);
@@ -57,7 +58,7 @@ export default function Intro() {
 				<span className="font-bold">Hi, I&apos;m Suman.</span> I&apos;m a{" "}
 				<span className="font-bold">full-stack developer</span>. I enjoy
 				building <span className="italic">Websites & apps</span>. My focus is{" "}
-				<span className="underline">React (Next.js)</span>.
+				<span className="hoverAnimation font-semibold dark:text-white">React (Next.js)</span>.
 			</motion.h1>
 
 			<motion.div
@@ -79,7 +80,7 @@ export default function Intro() {
 				</Link>
 
 				<a
-					className="bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition group cursor-pointer borderBlack"
+					className="bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition group cursor-pointer borderBlack dark:bg-white/10 dark:text-white/90"
 					href="/CV.pdf"
 					download>
 					Download CV{" "}
@@ -87,14 +88,14 @@ export default function Intro() {
 				</a>
 
 				<a
-					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer borderBlack  hover:text-gray-950"
+					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer borderBlack  hover:text-gray-950 dark:bg-white/10 dark:text-white/90"
 					rel="noopener noreferrer"
 					target="_blank"
 					href="https://www.linkedin.com/in/suman-mondal-a364b2196/">
 					<BsLinkedin />
 				</a>
 				<a
-					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer borderBlack hover:text-gray-950"
+					className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-110 transition group cursor-pointer borderBlack hover:text-gray-950 dark:bg-white/10 dark:text-white/90"
 					rel="noopener noreferrer"
 					target="_blank"
 					href="https://github.com/suman-rocky/">
