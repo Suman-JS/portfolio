@@ -7,3 +7,7 @@
         @apply
     }
 } */
+
+html {
+    --line-color: #e5e7eb;
+}

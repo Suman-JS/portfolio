@@ -7,20 +7,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/hooks/use-active-section-context";
+import useSectionInView from "@/hooks/use-section-inview";
 
 export default function Intro() {
-	const { ref, inView } = useInView({
-		threshold: 0.75,
-	});
-	const { setActiveSection, timeOfLastClicked } = useActiveSectionContext();
-
-	useEffect(() => {
-		if (inView && Date.now() - timeOfLastClicked > 1000) {
-			setActiveSection("Home");
-		}
-	}, [inView, setActiveSection, timeOfLastClicked]);
+	const { ref } = useSectionInView("Home", 0.5);
 	return (
 		<section
 			ref={ref}
