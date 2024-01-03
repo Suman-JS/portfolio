@@ -8,16 +8,16 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import SectionHeading from "./section-heading";
 import useSectionInView from "@/hooks/use-section-inview";
-import { experiencesData } from "@/lib/data";
+import { qualificationData } from "@/lib/data";
 import { useTheme } from "@/hooks/useTheme";
 
-export default function Experience() {
+export default function Qualification() {
 	const [isTimelineVisible, setIsTimelineVisible] = useState(false);
 	const { theme } = useTheme();
 
 	useEffect(() => {
 		const handleVisibility = () => {
-			const section = document.getElementById("experience");
+			const section = document.getElementById("qualification");
 			if (section) {
 				const rect = section.getBoundingClientRect();
 				const threshold = 0.175 * rect.height;
@@ -32,17 +32,17 @@ export default function Experience() {
 			window.removeEventListener("scroll", handleVisibility);
 		};
 	}, []);
-	const { ref } = useSectionInView("Experience", 0.5);
+	const { ref } = useSectionInView('Qualification', 0.5);
 	return (
 		<section
-			id="experience"
+			id="qualification"
 			ref={ref}
 			className="scroll-mt-28 mb-28 sm:mb-20">
-			<SectionHeading>My Experience</SectionHeading>
+			<SectionHeading>My qualification</SectionHeading>
 			<VerticalTimeline
 				lineColor=""
 				animate={isTimelineVisible}>
-				{experiencesData.map((item, index) => (
+				{qualificationData.map((item, index) => (
 					<React.Fragment key={index}>
 						<VerticalTimelineElement
 							visible={true}
@@ -66,8 +66,9 @@ export default function Experience() {
 							intersectionObserverProps={{ threshold: 0.5 }}
 							icon={item.icon}
 							iconStyle={{
-								background: theme === 'light' ? "white" : "rgba(255, 255, 255, 0.5)",
-								color: theme === 'light' ? "black" : "rgb(0, 0, 0)",
+								background:
+									theme === "light" ? "white" : "rgba(255, 255, 255, 0.5)",
+								color: theme === "light" ? "black" : "rgb(0, 0, 0)",
 								fontSize: "1.5rem",
 							}}>
 							<h3 className=" font-semibold capitalize">{item.title}</h3>

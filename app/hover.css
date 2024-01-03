@@ -1,4 +1,4 @@
-.hoverAnimation {
+/* .hoverAnimation {
     position: relative;
     color: black;
     font-weight: 500;
@@ -21,24 +21,55 @@
 }
 
 .hoverAnimation:not(.dark)::after {
-    background-image: linear-gradient(120deg, var(--first-light-color) 0%, var(--second-light-color) 100%);
+    background-image: linear-gradient(120deg, #d9afd9 0%, #97d9e1 100%);
 }
 
 .hoverAnimation.dark::after {
-    background-image: linear-gradient(120deg, var(--first-dark-color) 0%, var(--second-dark-color) 100%);
+    background-image: linear-gradient(120deg, d9afd9 0%, #97d9e1 100%);
 }
 
 .hoverAnimation:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-}
+} */
 
-.lightGradient {
-    --first-light-color: #fccb90;
-    --second-light-color: #d57eeb;
-}
 
-.darkGradient {
+
+/* .darkGradient {
     --first-dark-color: #d9afd9;
     --second-dark-color: #97d9e1;
+} */
+
+
+
+
+.hoverAnimation {
+    position: relative;
+    color: black;
+    font-weight: 500;
+}
+
+.hoverAnimation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.7s ease;
+    -webkit-transition: transform 0.7s ease;
+    -moz-transition: transform 0.7s ease;
+    -ms-transition: transform 0.7s ease;
+    -o-transition: transform 0.7s ease;
+}
+
+.hoverAnimation::after {
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+.hoverAnimation:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }

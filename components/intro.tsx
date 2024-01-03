@@ -58,7 +58,10 @@ export default function Intro() {
 				<span className="font-bold">Hi, I&apos;m Suman.</span> I&apos;m a{" "}
 				<span className="font-bold">full-stack developer</span>. I enjoy
 				building <span className="italic">Websites & apps</span>. My focus is{" "}
-				<span className="hoverAnimation font-semibold dark:text-white">React (Next.js)</span>.
+				<a className="hoverAnimation font-semibold dark:text-white">
+					React (Next.js)
+				</a>
+				.
 			</motion.h1>
 
 			<motion.div

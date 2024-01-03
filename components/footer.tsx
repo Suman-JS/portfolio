@@ -8,7 +8,7 @@ export default function Footer() {
 				<span className="font-medium">Suman</span> | All rights reserved.
 			</small>
 			<p className=" text-xs ">
-				<span className="font-semibold">About this website :</span>
+				<span className="font-semibold">About this website : </span>
 				built with React & Next.js (App Router & Server Actions), TypeScript,
 				Tailwind CSS, Framer Motion, React Email and Resend and hosted on
 				Vercel, and deployed with GitHub.
