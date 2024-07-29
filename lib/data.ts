@@ -33,28 +33,20 @@ export const links = [
 
 export const qualificationData = [
   {
-    title: "Diploma in Computer Science and Technology",
-    location: "Katwa, West Bengal, India",
-    description:
-      "I completed my diploma on Computer Science & Technology from Bengal Institute Of Technology. I also learned C, C++, Java, Python, HTML, CSS, JavaScript. ",
-    icon: React.createElement(LuGraduationCap),
-    date: "2018 - 2021",
-  },
-  {
-    title: "ASP.NET MVC Professional Training",
-    location: "Kolkata, West Bengal, India",
-    description:
-      "I learned ASP.NET MVC from Ejob India. I also learned C#, SQL Server, Entity Framework, Stored Procedure, LINQ, Bootstrap, jQuery etc. ",
-    icon: React.createElement(LuGraduationCap),
-    date: "2022",
-  },
-  {
     title: "B.Tech in Information Technology",
     location: "Dhulagarh, West Bengal, India",
     description:
-      "Currently I'm persuing B.Tech in Information Technology from Seacom Engineering College. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "I completed my B.Tech in Information Technology from Seacom Engineering College. Additionally, I have acquired skills in TypeScript, React, Next.js, and TailwindCSS.",
     icon: React.createElement(LuGraduationCap),
     date: "2021 - 2024",
+  },
+  {
+    title: "Diploma in Computer Science and Technology",
+    location: "Katwa, West Bengal, India",
+    description:
+      "I completed my diploma in Computer Science & Technology from Bengal Institute of Technology. Additionally, I have learned C, C++, Java, Python, HTML, CSS, and JavaScript.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2018 - 2021",
   },
 ] as const;
 
@@ -62,7 +54,7 @@ export const projectsData = [
   {
     title: "create-ndcf-app (In-progress)",
     description:
-      "NEXT.js boilerplate application with TypeScript/JavaScript, TailwindCSS, Docker Configuration, Cloud Foundry Configuration, Shadcn/ui, and more.",
+      "An open-source CLI application for generating Next.js boilerplate applications, supporting TypeScript/JavaScript, TailwindCSS, Docker configuration, Cloud Foundry configuration, Shadcn/UI, and more.",
     tags: ["Node.js", "TypeScript"],
     imageUrl: createndcfapp,
   },
@@ -109,12 +101,10 @@ export const skillsData = [
   "React",
   "NEXT.js",
   "Git",
-  "Github",
   "Github Actions",
   "TailwindCSS",
   "Prisma",
   "Redux",
-  "MySQL",
   "Framer Motion",
   "UI5",
   "Docker",
